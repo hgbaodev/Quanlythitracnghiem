@@ -46,13 +46,13 @@
                             <div class="test-ans bg-primary rounded-bottom py-2 px-3 d-flex align-items-center">
                                 <p class="mb-0 text-white me-4">Đáp án của bạn:</p>
                                 <div>
-                                    <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" ques-id="1">
                                     <label class="btn btn-light rounded-pill me-2 btn-answer" for="option1">A</label>
-                                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" ques-id="1">
                                     <label class="btn btn-light rounded-pill me-2 btn-answer" for="option2">B</label>
-                                    <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off" ques-id="1">
                                     <label class="btn btn-light rounded-pill me-2 btn-answer" for="option3">C</label>
-                                    <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off">
+                                    <input type="radio" class="btn-check" name="options" id="option4" autocomplete="off" ques-id="1">
                                     <label class="btn btn-light rounded-pill me-2 btn-answer" for="option4">D</label>
                                 </div>
                             </div>
@@ -82,11 +82,14 @@
                             <div class="test-ans bg-primary rounded-bottom py-2 px-3 d-flex align-items-center">
                                 <p class="mb-0 text-white me-4">Đáp án của bạn:</p>
                                 <div>
-                                    <button class="btn btn-light rounded-pill me-2">A</button>
-                                    <button class="btn btn-light rounded-pill me-2">B</button>
-                                    <button class="btn btn-light rounded-pill me-2">C</button>
-                                    <button class="btn btn-light rounded-pill me-2">D</button>
-                                    <input type="hidden" name="answer-1">
+                                    <input type="radio" class="btn-check" name="options2" id="option1-2" autocomplete="off" ques-id="2">
+                                    <label class="btn btn-light rounded-pill me-2 btn-answer" for="option1-2">A</label>
+                                    <input type="radio" class="btn-check" name="options2" id="option2-2" autocomplete="off" ques-id="2">
+                                    <label class="btn btn-light rounded-pill me-2 btn-answer" for="option2-2">B</label>
+                                    <input type="radio" class="btn-check" name="options2" id="option3-2" autocomplete="off" ques-id="2">
+                                    <label class="btn btn-light rounded-pill me-2 btn-answer" for="option3-2">C</label>
+                                    <input type="radio" class="btn-check" name="options2" id="option4-2" autocomplete="off" ques-id="2">
+                                    <label class="btn btn-light rounded-pill me-2 btn-answer" for="option4-2">D</label>
                                 </div>
                             </div>
                         </div>
@@ -94,34 +97,34 @@
                 <div class="col-4 bg-white p-3 rounded border h-100 sidebar-answer">
                     <ul class="answer">
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-primary w-100">1</a>
+                            <a href="1" class="answer-item-link btn btn-outline-primary w-100">1</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">2</a>
+                            <a href="2" class="answer-item-link btn btn-outline-primary w-100">2</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">3</a>
+                            <a href$="3" class="answer-item-link btn btn-outline-primary w-100">3</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">4</a>
+                            <a href$="4" class="answer-item-link btn btn-outline-primary w-100">4</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">5</a>
+                            <a href$="5" class="answer-item-link btn btn-outline-primary w-100">5</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">6</a>
+                            <a href$="6" class="answer-item-link btn btn-outline-primary w-100">6</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">7</a>
+                            <a href$="7" class="answer-item-link btn btn-outline-primary w-100">7</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">8</a>
+                            <a href$="8" class="answer-item-link btn btn-outline-primary w-100">8</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">9</a>
+                            <a href$="9" class="answer-item-link btn btn-outline-primary w-100">9</a>
                         </li>
                         <li class="answer-item p-1">
-                            <a href="" class="answer-item-link btn btn-outline-primary w-100">10</a>
+                            <a href$="10" class="answer-item-link btn btn-outline-primary w-100">10</a>
                         </li>
                     </ul>
                 </div>
@@ -131,5 +134,12 @@
     <!-- END Page Container -->
     <script src="./public/js/dashmix.app.min.js"></script>
 </body>
-
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".btn-check").on("click",function(){
+            let questionId = $(this).attr('ques-id');
+            $(`a[href$='${questionId}']`).addClass('active');
+        })
+    })
+</script>
 </html>
