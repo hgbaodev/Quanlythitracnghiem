@@ -1,0 +1,27 @@
+.answer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.answer-item{
+    width: 20%;
+}
+
+.sidebar-answer{
+    position: sticky;
+    top:65px;
+}
+
+.tbl-collapse td{
+    padding: 0 !important;
+}
+
+.icon-dropdown-item{
+    font-size: 14px;
+}
