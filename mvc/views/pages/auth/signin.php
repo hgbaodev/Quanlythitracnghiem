@@ -51,7 +51,7 @@
                                 <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Đăng nhập
                             </button>
                         </div>
-                        <a class="btn btn-alt-secondary me-1 mb-3 w-100">
+                        <a class="btn btn-alt-secondary me-1 mb-3 w-100" href="<?php echo $data["authUrl"]?>">
                             <img alt="Logo" src="./public/media/svg/google-icon.svg"
                                 style="height:15px;margin-right:20px">Đăng nhập với Google</a>
                     </form>

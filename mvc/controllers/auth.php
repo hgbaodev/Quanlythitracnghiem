@@ -2,30 +2,67 @@
 class Auth extends Controller{
 
     public $userModel;
+    public $googleAuth;
 
     function __construct()
     {
         $this->userModel = $this->model("NguoiDungModel");
+        $this->googleAuth = $this->model("GoogleAuth");
     }
 
     public function default()
     {
-        $this->view("single_layout", [
-            "Page" => "auth/signin",
-            "Title" => "Đăng nhập"
-        ]);
+        $p = parse_url($_SERVER['REQUEST_URI']);
+        if(isset($p['query'])) {
+            $query = $p['query'];
+            $queryitem = explode('&', $query);
+            $get = array();
+            foreach($queryitem as $key => $qi) {
+                $r = explode('=', $qi);
+                $get[$r[0]] = $r[1];
+            }
+            $this->googleAuth->handleCallback(urldecode($get['code']));
+        } else {
+            $authUrl = $this->googleAuth->getAuthUrl();
+            $this->view("single_layout", [
+                "Page" => "auth/signin",
+                "Title" => "Đăng nhập",
+                'authUrl' => $authUrl,
+                "Script" => "signin",
+                "Plugin" => [
+                    "jquery-validate" => 1
+                ]
+            ]);
+        }
     }
 
-    function signin(){
-        $this->view("single_layout", [
-            "Page" => "auth/signin",
-            "Title" => "Đăng nhập",
-            "Script" => "signin",
-            "Plugin" => [
-                "jquery-validate" => 1
-            ]
-        ]);
+    function signin()
+    {
+        $p = parse_url($_SERVER['REQUEST_URI']);
+        if(isset($p['query'])) {
+            $query = $p['query'];
+            $queryitem = explode('&', $query);
+            $get = array();
+            foreach($queryitem as $key => $qi) {
+                $r = explode('=', $qi);
+                $get[$r[0]] = $r[1];
+            }
+            $this->googleAuth->handleCallback(urldecode($get['code']));
+        } else {
+            $authUrl = $this->googleAuth->getAuthUrl();
+            $this->view("single_layout", [
+                "Page" => "auth/signin",
+                "Title" => "Đăng nhập",
+                'authUrl' => $authUrl,
+                "Script" => "signin",
+                "Plugin" => [
+                    "jquery-validate" => 1
+                ]
+            ]);
+        }
     }
+    
+
 
     function signup(){
         $this->view("single_layout", [
@@ -49,13 +86,26 @@ class Auth extends Controller{
         ]);
     }
 
+
     public function addUser()
     {   
-        $fullname = $_POST['fullname'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $result = $this->userModel->insert($fullname,$email,$password);
-        echo $result;
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
+            $fullname = $_POST['fullname'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $result = $this->userModel->create($fullname,$email,$password);
+            echo $result;
+        } else {
+            header("Location: ./");
+        }
+    }
+
+    public function getUser()
+    {
+        if(isset($_POST['email'])) {
+            $user = $this->userModel->getById($_POST['email']);
+            echo json_encode($user);
+        }
     }
 }
 ?>

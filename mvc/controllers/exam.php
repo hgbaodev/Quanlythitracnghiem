@@ -21,6 +21,14 @@ class Exam extends Controller{
             "Title" => "Bắt đầu thi"
         ]);
     }
+
+    public function detail()
+    {
+        $this->view("main_layout",[
+            "Page" => "exam_detail",
+            "Title" => "Danh sách đã thi"
+        ]);
+    }
 }
 
 ?>

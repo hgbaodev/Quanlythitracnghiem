@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="p-2">
-                        <a class="dropdown-item" href="javascript:void(0)">
+                        <a class="dropdown-item" href="./account">
                             <i class="si si-settings me-2 fa-fw icon-dropdown-item"></i> Tài khoản
                         </a>
                         <a class="dropdown-item" href="op_auth_signin.html">

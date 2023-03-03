@@ -9,6 +9,10 @@
 
 }
 
+.question{
+    scroll-margin-top: 70px;
+}
+
 .answer-item{
     width: 20%;
 }
@@ -18,10 +22,20 @@
     top:65px;
 }
 
+.answer-item-link.active{
+    background-color: #0665d0;
+    color:#fff
+}
+
 .tbl-collapse td{
     padding: 0 !important;
 }
 
 .icon-dropdown-item{
     font-size: 14px;
+}
+
+.btn-check:checked + .btn-answer{
+    background-color: orange;
+    color: #fff;
 }

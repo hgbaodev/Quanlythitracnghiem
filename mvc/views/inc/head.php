@@ -1,8 +1,3 @@
-<?php
-if(isset($_COOKIE['login']) && !isset($_SESSION['role'])) {
-    
-}
-?>
 <!doctype html>
 <html lang="en">
 
@@ -39,7 +34,7 @@ if(isset($_COOKIE['login']) && !isset($_SESSION['role'])) {
         echo '<link rel="stylesheet" href="./public/js/plugins/select2/css/select2.min.css">';
     }
     if(isset($data["Plugin"]["sweetalert2"]) && $data["Plugin"]["sweetalert2"] == 1) {
-        echo '<link rel="stylesheet" href="./public/js/plugins/sweetalert2/sweetalert2.min.css">';
+        echo "<link rel=\"stylesheet\" href=\"./public/js/plugins/sweetalert2/sweetalert2.min.css\">\n";
     }
     ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">

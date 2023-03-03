@@ -45,6 +45,7 @@
         <div class="block-header block-header-default">
             <h3 class="block-title">Tất cả người dùng</h3>
             <div class="block-options">
+                <button type="button" class="btn btn-primary me-2">Thêm người dùng</button>
                 <div class="dropdown">
                     <button type="button" class="btn btn-alt-secondary" id="dropdown-ecom-filters"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

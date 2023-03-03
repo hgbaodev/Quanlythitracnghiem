@@ -24,8 +24,7 @@ class App{
         if(isset($arr[1])){
             if(method_exists( $this->controller , $arr[1]) ){
                 $this->action = $arr[1];
-            } 
-            else {
+            } else {
                 // Hien thi trang loi
                 $this->controller = 'myerror';
                 require_once "./mvc/controllers/". $this->controller .".php";
@@ -33,7 +32,6 @@ class App{
             }
             unset($arr[1]);
         }
-
         // Params
         $this->params = $arr?array_values($arr):[];
         call_user_func_array([$this->controller, $this->action], $this->params );

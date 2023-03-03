@@ -4,7 +4,7 @@
         <div class="bg-image pt-9" style="background-image: url('./public/media/photos/photo19@2x.jpg');"></div>
         <div class="px-4 py-3 bg-body-extra-light d-flex flex-column flex-md-row align-items-center">
             <a class="d-block img-link mt-n5" href="be_pages_generic_profile_v2.html">
-                <img class="img-avatar img-avatar128 img-avatar-thumb" src="./public/media/avatars/avatar13.jpg" alt="">
+                <img class="img-avatar img-avatar128 img-avatar-thumb" src="./public/media/avatars/avatar0.jpg" alt="">
             </a>
             <div class="ms-3 flex-grow-1 text-center text-md-start my-3 my-md-0">
                 <h1 class="fs-4 fw-bold mb-1">John Smith</h1>
@@ -99,7 +99,7 @@
                             <div class="mb-4">
                                 <label class="form-label">Your Avatar</label>
                                 <div class="push">
-                                    <img class="img-avatar" src="./public/media/avatars/avatar13.jpg" alt="">
+                                    <img class="img-avatar" src="./public/media/avatars/avatar0.jpg" alt="">
                                 </div>
                                 <label class="form-label" for="dm-profile-edit-avatar">Choose a new avatar</label>
                                 <input class="form-control" type="file" id="dm-profile-edit-avatar">

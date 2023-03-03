@@ -413,7 +413,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>      
                 <div class="hero-meta">
                     <div>
                         <span class="d-inline-block animated bounce infinite">
