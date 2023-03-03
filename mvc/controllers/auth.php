@@ -88,16 +88,14 @@ class Auth extends Controller{
 
 
     public function addUser()
-    {   
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
+    {  
+        if(isset($_POST['email'])){
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
             $result = $this->userModel->create($fullname,$email,$password);
             echo $result;
-        } else {
-            header("Location: ./");
-        }
+        } 
     }
 
     public function getUser()
@@ -106,6 +104,16 @@ class Auth extends Controller{
             $user = $this->userModel->getById($_POST['email']);
             echo json_encode($user);
         }
+    }
+
+    public function checkLogin(){
+        if(isset($_POST['email'])){
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $result = $this->userModel->checkLogin($email,$password);
+            echo $result;
+        }
+            
     }
 }
 ?>

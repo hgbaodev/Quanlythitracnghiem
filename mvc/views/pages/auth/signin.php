@@ -16,7 +16,7 @@
                     <!-- Sign In Form -->
                     <!-- jQuery Validation (.js-validation-signin class is initialized in js/pages/op_auth_signin.min.js which was auto compiled from _js/pages/op_auth_signin.js) -->
                     <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
-                    <form class="js-validation-signin" action="be_pages_auth_all.html" method="POST">
+                    <form class="js-validation-signin" action="" method="POST">
                         <div class="mb-4">
                             <div class="input-group input-group-lg">
                                 <input type="text" class="form-control" id="login-username" name="login-username"
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="text-center mb-4">
-                            <button type="submit" class="btn btn-hero btn-primary">
+                            <button type="submit" class="btn btn-hero btn-primary" id="btn-login">
                                 <i class="fa fa-fw fa-sign-in-alt opacity-50 me-1"></i> Đăng nhập
                             </button>
                         </div>

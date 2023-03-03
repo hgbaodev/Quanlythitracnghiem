@@ -61,7 +61,7 @@ $(".js-validation-signup").submit(function (e) {
             dataType: "json",
             success: function (response) {
                 if(response) {
-                    alert("Tạo thành công")
+                    window.location = "http://localhost/Quanlythitracnghiem/"
                 } else {
                     alert("Tạo không thành công")
                 }

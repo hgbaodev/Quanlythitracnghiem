@@ -42,5 +42,23 @@ class NguoiDungModel extends DB{
         }
         return json_encode($check);
     }
+
+    public function checkLogin($email,$password){
+        $password = password_hash($password,PASSWORD_DEFAULT);
+        $user = $this->getById($email);
+        if($user == ''){
+            return "Tài khoản không tồn tại";
+        } else {
+            $sql = "SELECT * FROM `nguoidung` WHERE `email` = '$email' && 'password'='$password'";
+            $result = mysqli_query($this->con, $sql);
+            if($result){
+                $email = $user['email'];
+                setcookie("email", $email, time() + 60*60*60, "/");
+                return "Đăng nhập thành công";
+            } else {
+                return "Mật khẩu không khớp";
+            }
+        }
+    }
 }
 ?>
