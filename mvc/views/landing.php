@@ -1,5 +1,7 @@
 <?php require "inc/head.php" ?>
-
+<?php
+    echo $_SESSION['user_email'];
+?>
 <body>
     <!-- Page Container -->
     <!--

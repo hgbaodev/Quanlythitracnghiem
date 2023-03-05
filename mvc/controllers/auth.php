@@ -3,11 +3,13 @@ class Auth extends Controller{
 
     public $userModel;
     public $googleAuth;
+    public $mailAuth;
 
     function __construct()
     {
         $this->userModel = $this->model("NguoiDungModel");
         $this->googleAuth = $this->model("GoogleAuth");
+        $this->mailAuth = $this->model("MailAuth");
     }
 
     public function default()
@@ -22,6 +24,7 @@ class Auth extends Controller{
                 $get[$r[0]] = $r[1];
             }
             $this->googleAuth->handleCallback(urldecode($get['code']));
+            
         } else {
             $authUrl = $this->googleAuth->getAuthUrl();
             $this->view("single_layout", [
@@ -113,7 +116,10 @@ class Auth extends Controller{
             $result = $this->userModel->checkLogin($email,$password);
             echo $result;
         }
-            
+    }
+
+    public function sendOptAuth(){
+        $this->mailAuth->sendOpt();
     }
 }
 ?>
