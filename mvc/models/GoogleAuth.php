@@ -1,5 +1,5 @@
 <?php
-require_once 'google-api/vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 class GoogleAuth extends DB{
 

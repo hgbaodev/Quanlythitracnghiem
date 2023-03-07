@@ -39,3 +39,7 @@
     background-color: orange;
     color: #fff;
 }
+
+#list-options p{
+    margin-bottom: 0;
+}

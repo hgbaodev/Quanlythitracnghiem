@@ -3,13 +3,16 @@
     <div class="block block-rounded">
         <div class="block-header block-header-default">
             <h3 class="block-title">Thêm câu hỏi</h3>
+            <div class="block-option">
+                <button type="button" class="btn btn-hero btn-primary"><i class="fa fa-file-import me-2"></i> Nhập bằng file Word</button>
+            </div>
         </div>
         <div class="block-content">
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-12">
                     <form action="be_pages_ecom_product_edit.html" method="POST" onsubmit="return false;">
                         <div class="mb-4">
-                            <div class="row">
+                        <div class="row">
                                 <div class="col-4">
                                     <label for="" class="form-label">Môn học</label>
                                     <select class="js-select2 form-select" id="mon-hoc" name="mon-hoc"
@@ -60,51 +63,38 @@
                             <textarea id="js-ckeditor" name="ckeditor">OOP là viết tắt của từ nào ?</textarea>
                         </div>
                         <div class="mb-4 row">
-                            <div class="col-6 mb-4">
-                                <label class="form-label" for="js-ckeditor-1">Lựa chọn 1</label>
-                                <textarea id="js-ckeditor-1" name="ckeditor-1">OOP là viết tắt của từ nào ?</textarea>
+                            <h6>Danh sách đáp án</h6>
+                            <div class="table-responsive">
+                                <table class="table table-vcenter">
+                                    <tbody id="list-options">    
+                                    </tbody>
+                                </table>
                             </div>
-                            <div class="col-6 mb-4">
-                                <label class="form-label" for="js-ckeditor-2">Lựa chọn 2</label>
-                                <textarea id="js-ckeditor-2" name="ckeditor-2">OOP là viết tắt của từ nào ?</textarea>
-                            </div>
-                            <div class="col-6 mb-4">
-                                <label class="form-label" for="js-ckeditor-3">Lựa chọn 3</label>
-                                <textarea id="js-ckeditor-3" name="ckeditor-3">OOP là viết tắt của từ nào ?</textarea>
-                            </div>
-                            <div class="col-6 mb-4">
-                                <label class="form-label" for="js-ckeditor-4">Lựa chọn 4</label>
-                                <textarea id="js-ckeditor-4" name="ckeditor-4">OOP là viết tắt của từ nào ?</textarea>
+                            <p>
+                                <button class="btn btn-hero btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#add_option" aria-expanded="false" aria-controls="add_option">
+                                    Thêm câu trả lời <i class="fa fa-fw fa-angle-down opacity-50"></i>
+                                </button>
+                            </p>
+                            <div class="collapse" id="add_option">
+                                <div class="card card-body">
+                                    <label class="form-label" for="option-content">Nội dung trả lời</label>
+                                    <textarea id="option-content" name="ckeditor">Sinh</textarea>
+                                    <div class="form-check mt-4">
+                                        <input class="form-check-input" type="checkbox" value="" id="true-option">
+                                        <label class="form-check-label" for="true-option">
+                                            Đáp án đúng
+                                        </label>
+                                    </div>
+                                    <p>
+                                        <button type="button" class="btn btn-primary mt-3" id="save-option">Lưu câu trả lời</button>
+                                        <button type="button" class="btn btn-primary mt-3" id="update-option">Cập nhật câu trả lời</button>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                         <div class="mb-4">
-                            <div class="row">
-                                <div class="col-2">
-                                    <label for="" class="form-label">Câu trả lời đúng</label>
-                                </div>
-                                <div class="col-10">
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="luachondung" id="luachon-1" value="1">
-                                        <label class="form-check-label" for="luachon-1">Lựa chọn 1</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="luachondung" id="luachon-2" value="2">
-                                        <label class="form-check-label" for="luachon-2">Lựa chọn 2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="luachondung" id="luachon-3" value="3">
-                                        <label class="form-check-label" for="luachon-3">Lựa chọn 3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="luachondung" id="luachon-4" value="4">
-                                        <label class="form-check-label" for="luachon-4">Lựa chọn 4</label>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="mb-4">
-                            <button type="submit" class="btn btn-alt-primary"><i class="fa fa-fw fa-plus me-1"></i> Lưu câu hỏi</button>
+                            <button type="submit" class="btn btn-alt-primary"><i class="fa fa-fw fa-plus me-1"></i> Lưu
+                                câu hỏi</button>
                         </div>
                     </form>
                 </div>
@@ -113,3 +103,25 @@
     </div>
     <!-- END Your Block -->
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

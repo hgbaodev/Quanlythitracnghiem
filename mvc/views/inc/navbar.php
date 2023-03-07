@@ -21,7 +21,6 @@ $page = $components[2];
                 </span>
             </a>
             <!-- END Logo -->
-
             <!-- Options -->
             <div>
                 <!-- Toggle Sidebar Style -->
@@ -73,7 +72,10 @@ $page = $components[2];
                     <ul class="nav-main-submenu">
                         <li class="nav-main-item">
                             <a class="nav-main-link" href="./question/add">
-                                <span class="nav-main-link-name">Tạo câu hỏi mới</span>
+                                <span class="nav-main-link-name">Tạo câu hỏi thủ công</span>
+                            </a>
+                            <a class="nav-main-link" href="./question/addfile">
+                                <span class="nav-main-link-name">Tạo câu hỏi từ file</span>
                             </a>
                         </li>
                         <li class="nav-main-item">

@@ -24,7 +24,6 @@ class Auth extends Controller{
                 $get[$r[0]] = $r[1];
             }
             $this->googleAuth->handleCallback(urldecode($get['code']));
-            
         } else {
             $authUrl = $this->googleAuth->getAuthUrl();
             $this->view("single_layout", [
@@ -91,14 +90,16 @@ class Auth extends Controller{
 
 
     public function addUser()
-    {  
-        if(isset($_POST['email'])){
+    {   
+        if($_SERVER["REQUEST_METHOD"] == "POST") {
             $fullname = $_POST['fullname'];
             $email = $_POST['email'];
             $password = $_POST['password'];
             $result = $this->userModel->create($fullname,$email,$password);
             echo $result;
-        } 
+        } else {
+            header("Location: ./");
+        }
     }
 
     public function getUser()
